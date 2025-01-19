@@ -12,7 +12,14 @@ typedef struct floatStack {
     int top;
 } floatStack;
 
-enum operators {SUBTRACT, ADD, MULTIPLY, DIVIDE, LEFTPAREN, RIGHTPAREN, OPERAND};
+typedef enum {
+    SUBTRACT, 
+    ADD, 
+    MULTIPLY, 
+    DIVIDE, 
+    LEFTPAREN, 
+    RIGHTPAREN, 
+    OPERAND} operators;
 
 charStack* init_charStack();
 void push_charStack(charStack* stack, char character);
