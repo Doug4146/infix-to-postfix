@@ -30,20 +30,22 @@ int postfix_to_int(char* expression);
 
 
 
-int main() {
+int main(int argc, char *argv[]) {
 
-    char expression[20];
-    printf("Enter infix expression:\n");
-    fgets(expression, 20, stdin);
-    if (expression[strlen(expression) - 1] == '\n') {
-        expression[strlen(expression) - 1] = '\0'; // Replace newline
+    // argc-1 = #infix strings input
+    // argv -> array containing strings
+
+    char* postFix[argc-1];
+    for (int i = 0; i < argc-1; i++) {
+        postFix[i] = NULL;
     }
 
-    char* infix = (char*)malloc(20*sizeof(char));
-    strcpy(infix, infix_to_postfix(expression));
-    printf("Postfix expression: %s\n", infix);
-    printf("This evaluates to: %d", postfix_to_int(infix));
-
+    for (int j = 0; j < argc-1; j++) {
+        postFix[j] = infix_to_postfix(argv[j+1]);
+        printf("\nInfix expression #%d: %s\n", j+1, argv[j+1]);
+        printf("Postfix expression: %s\n", postFix[j]);
+        printf("This evaluates to: %d\n", postfix_to_int(postFix[j]));
+    }
     
     return 0;
 
@@ -253,11 +255,3 @@ int postfix_to_int(char* expression) {
 
     return answer;
 }
-
-
-
-
-
-
-
-
