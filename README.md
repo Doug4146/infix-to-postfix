@@ -10,10 +10,7 @@ This simple toy program converts infix expressions to postfix notation and evalu
 ## Requirements
 - GCC Compiler
   - Tested with MinGW GCC 14.2.0:
-    ```
-    gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r1) 14.2.0
-    ```
-
+    
 ## Usage
 This program **requires the use of command-line arguments** to input infix expressions. You must provide the expressions as arguments when running the program.
 
